@@ -12,4 +12,11 @@ const router = express.Router();
 router.get("/", GiftController.getGifts);
 
 router.get("/:giftId", GiftController.getGiftsbyId);
+
+router.post("/", GiftController.createGift);
+
+router.delete("/:id", GiftController.deleteGift);
+
+router.patch("/:id", GiftController.updateGift);
+
 export default router;

@@ -1,45 +1,73 @@
 .card {
-    width: 300px;
-    height: 400px;
-    background: transparent;
-    border-style: solid;
-    border-width: 3px;
-    border-color: rgb(3, 7, 89);
-    border-radius: 0.3rem;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.057);
-    margin-top: 0px;
-    margin-left: 20px;
-    margin-right: 40px;
-    margin-bottom: 60px;
-
-}
-
-.card img {
-    height: 100%;
+  width: 300px;
+  height: 400px;
+  background: transparent;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(3, 7, 89);
+  border-radius: 0.3rem;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.057);
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 40px;
+  margin-bottom: 60px;
+  position: relative; /* allow absolutely positioned children like the more icon */
 }
 
 .top-container {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 180px;
+  width: 100%;
+  margin-top: 0;
+  margin-right: 0;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 
 .bottom-container {
-    margin-top:30px;
-    margin-left: 10px;
+  margin-top: 30px;
+  margin-left: 10px;
 }
 
 .bottom-container h3 {
-    margin-top: 10px;
-    margin-bottom: 6px;
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
 
 .bottom-container p {
-    margin: 2px;
+  margin: 2px;
 }
 
 .bottom-container a {
-    color: rgb(228, 16, 133);
-    text-decoration: none;
+  color: rgb(228, 16, 133);
+  text-decoration: none;
+}
+
+.more-img {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+  opacity: 0.95;
+  z-index: 2;
+}
+
+.more-img:active {
+  transform: scale(0.97);
+}
+
+.more-img:focus-visible {
+  outline: 2px solid #7c3aed; /* purple */
+  outline-offset: 2px;
 }

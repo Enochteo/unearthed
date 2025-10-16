@@ -12,7 +12,7 @@ const GiftDetails = ({ data }) => {
     image: "",
     description: "",
     submittedby: "",
-    submittedon: "",
+    submittedOn: "",
   });
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const GiftDetails = ({ data }) => {
       const results = await fetch(`http://localhost:3001/gifts/${id}`);
       const data = await results.json();
       setGift(data);
+      console.log(data);
     };
     fetchGiftsById();
   }, [data, id]);

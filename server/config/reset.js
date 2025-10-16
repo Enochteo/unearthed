@@ -7,12 +7,12 @@ const createTableQuery = `
     CREATE TABLE IF NOT EXISTS gifts (
             id SERIAL PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
-            pricePoint VARCHAR(10) NOT NULL,
+            pricepoint VARCHAR(10) NOT NULL,
             audience VARCHAR(255) NOT NULL,
-            image VARCHAR(255) NOT NULL,
+            image TEXT NOT NULL,
             description TEXT NOT NULL,
-            submittedBy VARCHAR(255) NOT NULL,
-            submittedOn TIMESTAMP NOT NULL
+            submittedby VARCHAR(255) NOT NULL,
+            submittedon TIMESTAMP NOT NULL
         )
 `;
 
@@ -29,7 +29,7 @@ const seedGiftsTable = async () => {
   await createGiftsTable();
   giftData.forEach((gift) => {
     const insertQuery = {
-      text: "INSERT INTO gifts (name, pricePoint, audience, image, description, submittedBy, submittedOn) VALUES ($1, $2, $3, $4, $5, $6, $7)",
+      text: "INSERT INTO gifts (name, pricepoint, audience, image, description, submittedby, submittedon) VALUES ($1, $2, $3, $4, $5, $6, $7)",
     };
     const values = [
       gift.name,
@@ -37,8 +37,8 @@ const seedGiftsTable = async () => {
       gift.audience,
       gift.image,
       gift.description,
-      gift.submittedBy,
-      gift.submittedOn,
+      gift.submittedby,
+      gift.submittedon,
     ];
     pool.query(insertQuery, values, (err, res) => {
       if (err) {
